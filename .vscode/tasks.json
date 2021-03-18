@@ -10,7 +10,9 @@
             "args": [
                 "${file}",
                 "-f",
-                "bin"
+                "bin",
+                "-o",
+                "..\\${fileBasenameNoExtension}"
             ],
             "problemMatcher": [],
             "group": {

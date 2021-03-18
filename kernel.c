@@ -1,9 +1,4 @@
-typedef unsigned char byte;
-typedef unsigned short word;
-typedef unsigned dword;
-typedef unsigned long long qword;
-
-
+#include "headers/types.h"
 struct vbeinfo
 {
     char sign[4];
@@ -19,9 +14,26 @@ struct vbeinfo
     byte resv[222];
     byte oem_data[256];
 }__attribute__((packed));
-void kernel_entry(struct *vbeinfo);
-
-void kernel_entry(st)
+struct vbe_modinfo
 {
+    word attr;
+    byte garb[112];
+    word pitch;
+    word width;
+    word height;
+    byte garb1[24];
+    word bpp;
+    byte garb2[112];
+    byte *framebuf;
+    byte *offscr_mem_off;
+    word *offscr_mem_size;
+    byte padding[206];
+    dword mode;
+}__attribute__((packed));
 
-}__attribute__((fastcall))
+
+
+
+void __fastcall kernel_entry(struct vbeinfo *vbinf)
+{ 
+}
