@@ -1,9 +1,13 @@
-org 0x100000
-bits 32
+.global start
 
 start:
-    mov ax, 0x10
-    mov ds, ax
-    mov ss, ax
-    mov es, ax
+    mov $0x10, %ax
+    mov %ax, %ds
+    mov %ax, %ss
+    mov %ax, %es
+    mov %esp, stack
+    call kernel_entry
     hlt
+
+stack:
+    

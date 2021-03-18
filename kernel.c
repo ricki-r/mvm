@@ -31,9 +31,9 @@ struct vbe_modinfo
     dword mode;
 }__attribute__((packed));
 
-
-
+char *str = "maga";
 
 void __fastcall kernel_entry(struct vbeinfo *vbinf)
-{ 
+{
+    str[0] = '5';
 }
